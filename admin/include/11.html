@@ -1,0 +1,30 @@
+<html ng-app="nameapp">
+    <head>
+        <title>upper case name converter</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    </head>
+    <body ng-controller="namectrl">
+        <h2>Srudent Names</h2>
+        <h3>Original Names:</h3>
+        <ul>
+            <li ng-repeat="name in names">
+                {{name}}
+            </li>
+        </ul>
+        <h3>Names in Uppercase:</h3>
+            <ul>
+                <li ng-repeat="name in names">
+                    {{name|uppercase}}
+                </li>
+            </ul>
+            <script>
+            var app= angular.module('nameapp',[]);
+            app.controller('namectrl',function($scope)
+            {
+                $scope.names=['Ram','Raj'];
+            });
+            </script>
+    </body>
+
+</html>
